@@ -43,7 +43,7 @@ const UAEMapVisual = () => {
                 <div className="absolute inset-x-0 inset-y-10 bg-[linear-gradient(rgba(0,234,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,234,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] transform -skew-x-12 -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent)]"></div>
 
                 {/* Scanning Laser Beam (The "Woah" Factor) */}
-                <div className="absolute top-0 bottom-0 left-[-50%] w-[10px] bg-gradient-to-r from-transparent via-atlas-cyan to-transparent opacity-30 shadow-[0_0_50px_#00EAFF] blur-sm animate-[scan_6s_linear_infinite] skew-x-[-20deg] pointer-events-none"></div>
+                <div className="absolute top-0 bottom-0 left-[-50%] w-[10px] bg-gradient-to-r from-transparent via-manara-cyan to-transparent opacity-30 shadow-[0_0_50px_#00EAFF] blur-sm animate-[scan_6s_linear_infinite] skew-x-[-20deg] pointer-events-none"></div>
 
                 <svg
                     viewBox="0 0 600 500"

@@ -24,20 +24,20 @@ const Navbar = () => {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-2 cursor-pointer group">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-atlas-cyan to-blue-600 group-hover:shadow-[0_0_20px_rgba(0,234,255,0.5)] transition-shadow duration-300"></div>
-                    <span className="text-2xl font-display font-bold tracking-tighter text-white">ATLAS</span>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-manara-cyan to-blue-600 group-hover:shadow-[0_0_20px_rgba(0,234,255,0.5)] transition-shadow duration-300"></div>
+                    <span className="text-2xl font-display font-bold tracking-tighter text-white">MANARA</span>
                 </div>
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center gap-8">
-                    {['About', 'Vision', 'How Atlas Works', 'Explore UAE', 'Essential Visit Places'].map((item) => (
+                    {['About', 'Vision', 'How Manara Works', 'Explore UAE', 'Essential Visit Places'].map((item) => (
                         <a
                             key={item}
-                            href={item === 'Explore UAE' ? '#explore' : (item === 'Essential Visit Places' ? '#essentials' : (item === 'How Atlas Works' ? '#how-it-works' : `#${item.toLowerCase().replace(' ', '-')}`))}
+                            href={item === 'Explore UAE' ? '#explore' : (item === 'Essential Visit Places' ? '#essentials' : (item === 'How Manara Works' ? '#how-it-works' : `#${item.toLowerCase().replace(' ', '-')}`))}
                             className="text-sm font-medium text-gray-300 hover:text-white transition-colors uppercase tracking-widest relative group"
                         >
                             {item}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-atlas-cyan transition-all group-hover:w-full"></span>
+                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-manara-cyan transition-all group-hover:w-full"></span>
                         </a>
                     ))}
                 </div>

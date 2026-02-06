@@ -1,6 +1,6 @@
-# ATLAS
+# MANARA
 
-ATLAS is an AI system that dynamically adapts tourism in the UAE.
+MANARA is an AI system that dynamically adapts tourism in the UAE.
 
 ## Features
 - AI-driven tourism personalization

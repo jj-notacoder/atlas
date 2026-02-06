@@ -22,7 +22,7 @@ const ProblemSolution = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-2xl text-atlas-cyan font-medium tracking-[0.2em] uppercase"
+                        className="text-2xl text-manara-cyan font-medium tracking-[0.2em] uppercase"
                     >
                         Static plans fail.
                     </motion.p>
@@ -46,7 +46,7 @@ const ProblemSolution = () => {
                         {/* Content */}
                         <div className="absolute inset-0 flex items-center justify-center p-12">
                             <div className="text-center">
-                                <div className="inline-block px-4 py-2 bg-atlas-cyan/20 rounded-full border border-atlas-cyan/50 text-atlas-cyan font-bold uppercase tracking-widest mb-6 shadow-[0_0_30px_rgba(0,234,255,0.4)]">
+                                <div className="inline-block px-4 py-2 bg-manara-cyan/20 rounded-full border border-manara-cyan/50 text-manara-cyan font-bold uppercase tracking-widest mb-6 shadow-[0_0_30px_rgba(0,234,255,0.4)]">
                                     Live Adaptation
                                 </div>
                                 <h3 className="text-5xl md:text-7xl font-bold text-white mb-4">
@@ -54,7 +54,7 @@ const ProblemSolution = () => {
                                 </h3>
                                 <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                                     Analyzing heat, traffic, and queues in real-time. <br />
-                                    <span className="text-atlas-cyan">Rerouting instantly.</span>
+                                    <span className="text-manara-cyan">Rerouting instantly.</span>
                                 </p>
                             </div>
                         </div>
@@ -102,7 +102,7 @@ const ProblemSolution = () => {
 
                     {/* Scanner Bar (The visible line) */}
                     <motion.div
-                        className="absolute left-0 right-0 h-[4px] bg-atlas-cyan z-20 shadow-[0_0_50px_rgba(0,234,255,0.8)]"
+                        className="absolute left-0 right-0 h-[4px] bg-manara-cyan z-20 shadow-[0_0_50px_rgba(0,234,255,0.8)]"
                         animate={{ top: ["0%", "100%", "100%", "0%"] }} // Match the clipPath
                         transition={{
                             duration: 8,

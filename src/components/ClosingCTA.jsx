@@ -6,7 +6,7 @@ const ClosingCTA = () => {
         <section className="py-32 bg-background relative overflow-hidden flex items-center justify-center border-t border-white/5">
 
             {/* Subtle Animated Background */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-atlas-cyan/5 via-background to-background pointer-events-none"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-manara-cyan/5 via-background to-background pointer-events-none"></div>
 
             <div className="container mx-auto px-6 text-center relative z-10">
                 <motion.h2

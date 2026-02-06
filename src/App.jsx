@@ -15,7 +15,7 @@ import Essentials from './components/Essentials';
 
 function App() {
   return (
-    <main className="relative min-h-screen w-full bg-background text-white selection:bg-atlas-cyan selection:text-black">
+    <main className="relative min-h-screen w-full bg-background text-white selection:bg-manara-cyan selection:text-black">
       <Navbar />
       <Hero />
       <ProblemSolution />

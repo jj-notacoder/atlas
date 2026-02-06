@@ -8,7 +8,7 @@ const Footer = () => {
 
                     {/* Column 1: Identity */}
                     <div className="flex flex-col items-start">
-                        <h3 className="text-4xl font-display font-bold text-white mb-4 tracking-tighter">ATLAS</h3>
+                        <h3 className="text-4xl font-display font-bold text-white mb-4 tracking-tighter">MANARA</h3>
                         <p className="text-gray-500 font-medium uppercase tracking-widest text-xs mb-4">
                             Adaptive Tourism & Logistics Autonomy System
                         </p>
@@ -23,7 +23,7 @@ const Footer = () => {
                             <a
                                 key={item}
                                 href="#"
-                                className="text-gray-500 hover:text-atlas-cyan transition-colors duration-300 font-medium tracking-wide"
+                                className="text-gray-500 hover:text-manara-cyan transition-colors duration-300 font-medium tracking-wide"
                             >
                                 {item}
                             </a>
@@ -39,7 +39,7 @@ const Footer = () => {
                             Designed for scale, resilience, and real-world conditions.
                         </p>
                         <div className="mt-8 text-gray-700 text-xs">
-                            &copy; 2026 ATLAS System.
+                            &copy; 2026 MANARA System.
                         </div>
                     </div>
 

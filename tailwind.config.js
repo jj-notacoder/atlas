@@ -9,7 +9,7 @@ export default {
       colors: {
         background: '#05070A',
         surface: '#050B12',
-        atlas: {
+        manara: {
           cyan: '#00EAFF', // Electric Cyan
           gold: '#D4AF37', // Desert Gold
           dark: '#05070A',

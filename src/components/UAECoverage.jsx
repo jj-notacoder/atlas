@@ -102,7 +102,7 @@ const UAECoverage = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-display font-bold text-white mb-4"
                     >
-                        Designed for the <span className="text-atlas-cyan">entire UAE.</span>
+                        Designed for the <span className="text-manara-cyan">entire UAE.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ const UAECoverage = () => {
                         transition={{ delay: 0.2 }}
                         className="text-gray-400 text-xl max-w-2xl mx-auto"
                     >
-                        Explore how ATLAS adapts to the rhythm of each emirate.
+                        Explore how MANARA adapts to the rhythm of each emirate.
                     </motion.p>
                 </div>
 
@@ -134,7 +134,7 @@ const UAECoverage = () => {
                             fill="#05070A"
                             stroke="#1f2937"
                             strokeWidth="2"
-                            className="transition-colors duration-500 hover:stroke-atlas-cyan/30"
+                            className="transition-colors duration-500 hover:stroke-manara-cyan/30"
                         />
 
                         {/* Connections */}
@@ -155,7 +155,7 @@ const UAECoverage = () => {
                                 className="cursor-pointer group"
                             >
                                 {/* Pulse effect on hover */}
-                                <circle cx={emirate.x} cy={emirate.y} r="8" className="fill-gray-800 stroke-gray-600 stroke-2 group-hover:fill-atlas-cyan group-hover:stroke-atlas-cyan transition-colors duration-300" />
+                                <circle cx={emirate.x} cy={emirate.y} r="8" className="fill-gray-800 stroke-gray-600 stroke-2 group-hover:fill-manara-cyan group-hover:stroke-manara-cyan transition-colors duration-300" />
                                 <motion.circle
                                     cx={emirate.x}
                                     cy={emirate.y}
@@ -206,7 +206,7 @@ const UAECoverage = () => {
                                         className="w-full h-full object-cover"
                                         onError={(e) => {
                                             e.target.style.display = 'none'; // Hide if broken (shouldn't happen now)
-                                            e.target.parentElement.classList.add('bg-atlas-dark');
+                                            e.target.parentElement.classList.add('bg-manara-dark');
                                         }}
                                     />
                                     <div className="absolute bottom-3 left-4 z-20">
@@ -228,10 +228,10 @@ const UAECoverage = () => {
                                         ))}
                                     </div>
 
-                                    <div className="flex items-start gap-3 p-3 rounded-lg bg-atlas-cyan/5 border border-atlas-cyan/10">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-atlas-cyan mt-1.5 animate-pulse shrink-0" />
+                                    <div className="flex items-start gap-3 p-3 rounded-lg bg-manara-cyan/5 border border-manara-cyan/10">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-manara-cyan mt-1.5 animate-pulse shrink-0" />
                                         <div>
-                                            <div className="text-[10px] text-atlas-cyan font-bold uppercase mb-0.5">Adaptation Active</div>
+                                            <div className="text-[10px] text-manara-cyan font-bold uppercase mb-0.5">Adaptation Active</div>
                                             <div className="text-sm text-gray-200 leading-snug">
                                                 {emirates.find(e => e.id === activeEmirate).adaptation}
                                             </div>

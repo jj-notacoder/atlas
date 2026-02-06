@@ -41,7 +41,7 @@ const TrustControl = () => {
                             </p>
 
                             {/* Geometric Accent */}
-                            <div className="mt-6 w-12 h-1 bg-gradient-to-r from-atlas-cyan to-transparent rounded-full opacity-50"></div>
+                            <div className="mt-6 w-12 h-1 bg-gradient-to-r from-manara-cyan to-transparent rounded-full opacity-50"></div>
                         </motion.div>
                     ))}
                 </div>

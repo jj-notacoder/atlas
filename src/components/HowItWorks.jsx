@@ -5,7 +5,7 @@ const steps = [
     {
         id: 1,
         title: "Sense the City",
-        description: "ATLAS continuously monitors heat, crowds, and major events across every emirate.",
+        description: "MANARA continuously monitors heat, crowds, and major events across every emirate.",
         tags: ["Heat", "Crowds", "Events"],
         example: "⚠ Alert: 42°C in Downtown Dubai"
     },
@@ -53,7 +53,7 @@ const HowItWorks = () => {
                             whileInView={{ scaleX: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-                            className="h-full w-full bg-gradient-to-r from-transparent via-atlas-cyan/50 to-transparent origin-left"
+                            className="h-full w-full bg-gradient-to-r from-transparent via-manara-cyan/50 to-transparent origin-left"
                         />
                     </div>
 
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                             className="relative group"
                         >
                             {/* Step Number/Icon */}
-                            <div className="w-32 h-32 mx-auto mb-10 rounded-full bg-surface border border-white/10 flex items-center justify-center relative z-10 text-4xl font-display font-bold text-gray-600 group-hover:text-atlas-cyan group-hover:border-atlas-cyan/50 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_40px_rgba(0,234,255,0.2)] bg-gradient-to-b from-white/5 to-transparent">
+                            <div className="w-32 h-32 mx-auto mb-10 rounded-full bg-surface border border-white/10 flex items-center justify-center relative z-10 text-4xl font-display font-bold text-gray-600 group-hover:text-manara-cyan group-hover:border-manara-cyan/50 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_40px_rgba(0,234,255,0.2)] bg-gradient-to-b from-white/5 to-transparent">
                                 {step.id}
                             </div>
 
@@ -91,7 +91,7 @@ const HowItWorks = () => {
 
                                 {/* Hover Reveal Example - Fixed Positioning to prevent overlap */}
                                 <div className="h-12 flex items-center justify-center">
-                                    <div className="inline-block px-5 py-2.5 rounded-xl bg-atlas-cyan/10 border border-atlas-cyan/20 text-atlas-cyan text-sm font-bold opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                                    <div className="inline-block px-5 py-2.5 rounded-xl bg-manara-cyan/10 border border-manara-cyan/20 text-manara-cyan text-sm font-bold opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                                         {step.example}
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@ const HowItWorks = () => {
                 <div className="text-center mt-20 md:mt-32">
                     <a
                         href="#demo"
-                        className="inline-flex items-center gap-3 text-atlas-cyan font-bold uppercase tracking-[0.2em] text-sm hover:text-white transition-colors duration-300 group hover:bg-atlas-cyan/10 px-8 py-4 rounded-full border border-transparent hover:border-atlas-cyan/30"
+                        className="inline-flex items-center gap-3 text-manara-cyan font-bold uppercase tracking-[0.2em] text-sm hover:text-white transition-colors duration-300 group hover:bg-manara-cyan/10 px-8 py-4 rounded-full border border-transparent hover:border-manara-cyan/30"
                     >
                         <span>Experience it Live</span>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-y-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">

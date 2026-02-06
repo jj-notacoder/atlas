@@ -97,7 +97,7 @@ const CustomDropdown = ({ label, options, value, onChange }) => {
             <label className="text-xs uppercase tracking-widest text-gray-400 font-bold mb-3 block">{label}</label>
             <div
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-full bg-surface border ${isOpen ? 'border-atlas-cyan' : 'border-white/10'} rounded-xl py-3 px-4 text-white text-sm font-medium cursor-pointer flex justify-between items-center transition-all hover:bg-white/5`}
+                className={`w-full bg-surface border ${isOpen ? 'border-manara-cyan' : 'border-white/10'} rounded-xl py-3 px-4 text-white text-sm font-medium cursor-pointer flex justify-between items-center transition-all hover:bg-white/5`}
             >
                 <span>{value}</span>
                 <svg className={`h-4 w-4 text-gray-400 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -117,7 +117,7 @@ const CustomDropdown = ({ label, options, value, onChange }) => {
                             <div
                                 key={option}
                                 onClick={() => { onChange(option); setIsOpen(false); }}
-                                className={`px-4 py-2.5 cursor-pointer text-sm transition-colors ${value === option ? 'text-atlas-cyan bg-white/5' : 'text-gray-400 hover:bg-white/5 hover:text-white'}`}
+                                className={`px-4 py-2.5 cursor-pointer text-sm transition-colors ${value === option ? 'text-manara-cyan bg-white/5' : 'text-gray-400 hover:bg-white/5 hover:text-white'}`}
                             >
                                 {option}
                             </div>
@@ -194,7 +194,7 @@ const LiveDemo = () => {
 
     // Chat & Logic State
     const [chatHistory, setChatHistory] = useState([
-        { type: 'bot', text: 'Hello! I am ATLAS. I have optimized your itinerary based on real-time data. Tell me if you need changes.' }
+        { type: 'bot', text: 'Hello! I am MANARA. I have optimized your itinerary based on real-time data. Tell me if you need changes.' }
     ]);
     const [userMessage, setUserMessage] = useState('');
     const [isTyping, setIsTyping] = useState(false);
@@ -376,7 +376,7 @@ const LiveDemo = () => {
 
                             const newActivity = {
                                 name: activityName,
-                                desc: `User added: "${activityName}". ATLAS verified availability.`,
+                                desc: `User added: "${activityName}". MANARA verified availability.`,
                                 cost: meta.cost,
                                 val: meta.val,
                                 tag: meta.tag,
@@ -478,9 +478,9 @@ const LiveDemo = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-                        See ATLAS <span className="text-atlas-gold">adapt a day</span> in real time.
+                        See MANARA <span className="text-manara-gold">adapt a day</span> in real time.
                     </h2>
-                    <p className="text-gray-500">Live data drives the plan. Chat with ATLAS to fine-tune.</p>
+                    <p className="text-gray-500">Live data drives the plan. Chat with MANARA to fine-tune.</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -582,14 +582,14 @@ const LiveDemo = () => {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: i * 0.1 }}
-                                    className={`relative bg-surface border ${slot.adjusted ? 'border-atlas-gold/40' : 'border-white/5'} hover:border-white/20 transition-colors p-6 rounded-2xl group`}
+                                    className={`relative bg-surface border ${slot.adjusted ? 'border-manara-gold/40' : 'border-white/5'} hover:border-white/20 transition-colors p-6 rounded-2xl group`}
                                 >
 
                                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
 
                                         {/* Time Column */}
                                         <div className="flex-none w-24">
-                                            <div className="text-sm font-bold text-atlas-cyan uppercase tracking-widest mb-1">{slot.time}</div>
+                                            <div className="text-sm font-bold text-manara-cyan uppercase tracking-widest mb-1">{slot.time}</div>
                                             <div className="text-xs text-gray-600 font-mono">
                                                 {slot.time === 'Morning' ? '09:00 - 12:00' :
                                                     slot.time === 'Midday' ? '12:00 - 15:00' :
@@ -602,7 +602,7 @@ const LiveDemo = () => {
                                             <div className="flex items-center gap-3 mb-2">
                                                 <h4 className="text-xl font-bold text-white">{slot.main.name}</h4>
                                                 {slot.adjusted && (
-                                                    <span className="bg-atlas-gold text-black text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">
+                                                    <span className="bg-manara-gold text-black text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">
                                                         ADAPTED
                                                     </span>
                                                 )}
@@ -615,7 +615,7 @@ const LiveDemo = () => {
                                             <div className="flex flex-wrap items-center gap-3">
                                                 <span className="text-xs font-medium text-gray-500 px-2 py-1 bg-white/5 rounded border border-white/5">{slot.main.tag}</span>
                                                 <span className="text-xs font-medium text-gray-500 px-2 py-1 bg-white/5 rounded border border-white/5">{slot.main.cost}</span>
-                                                {slot.adjusted && <span className="text-xs font-medium text-atlas-gold">{slot.note}</span>}
+                                                {slot.adjusted && <span className="text-xs font-medium text-manara-gold">{slot.note}</span>}
                                             </div>
                                         </div>
 
@@ -632,7 +632,7 @@ const LiveDemo = () => {
                                             >
                                                 <div className="flex items-start justify-between gap-2">
                                                     <h5 className="text-sm font-bold text-gray-300 group-hover/backup:text-white transition-colors">{slot.backup.name}</h5>
-                                                    <svg className="w-4 h-4 text-atlas-cyan opacity-0 group-hover/backup:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <svg className="w-4 h-4 text-manara-cyan opacity-0 group-hover/backup:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                                                     </svg>
                                                 </div>
@@ -650,19 +650,19 @@ const LiveDemo = () => {
                         <div className="bg-surface border border-white/10 rounded-2xl p-6 relative overflow-hidden">
                             {/* Header */}
                             <div className="flex items-center gap-3 mb-6 border-b border-white/5 pb-4">
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-atlas-cyan to-blue-500 flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-manara-cyan to-blue-500 flex items-center justify-center">
                                     <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
                                 </div>
-                                <h4 className="font-bold text-white">ATLAS Assistant</h4>
+                                <h4 className="font-bold text-white">MANARA Assistant</h4>
                             </div>
 
                             {/* Messages */}
                             <div className="space-y-4 mb-6 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
                                 {chatHistory.map((msg, i) => (
                                     <div key={i} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                        <div className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.type === 'user' ? 'bg-atlas-gold text-black rounded-tr-none' : 'bg-white/10 text-gray-200 rounded-tl-none'}`}>
+                                        <div className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.type === 'user' ? 'bg-manara-gold text-black rounded-tr-none' : 'bg-white/10 text-gray-200 rounded-tl-none'}`}>
                                             {msg.text}
                                         </div>
                                     </div>
@@ -685,7 +685,7 @@ const LiveDemo = () => {
                                     value={userMessage}
                                     onChange={(e) => setUserMessage(e.target.value)}
                                     placeholder="Type a request (e.g., 'Shuffle order' or 'Add Burj Khalifa')..."
-                                    className="w-full bg-black/40 border border-white/10 rounded-xl py-4 pl-4 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-atlas-cyan transition-colors"
+                                    className="w-full bg-black/40 border border-white/10 rounded-xl py-4 pl-4 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-manara-cyan transition-colors"
                                 />
                                 <button type="submit" className="absolute right-2 top-2 p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-white">
                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -266,7 +266,7 @@ const Card = ({ item, onClick, type }) => (
         layoutId={`card-${item.id}`}
         onClick={() => onClick(item)}
         whileHover={{ y: -5 }}
-        className="group relative h-[400px] w-full bg-gray-900 rounded-2xl overflow-hidden cursor-pointer border border-white/5 hover:border-atlas-cyan/50 transition-colors duration-300"
+        className="group relative h-[400px] w-full bg-gray-900 rounded-2xl overflow-hidden cursor-pointer border border-white/5 hover:border-manara-cyan/50 transition-colors duration-300"
     >
         <div className="absolute inset-0">
             <img src={item.image} alt={item.name} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700" />
@@ -275,10 +275,10 @@ const Card = ({ item, onClick, type }) => (
 
         <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
             {type === 'place' && (
-                <div className="text-xs font-bold text-atlas-cyan uppercase tracking-widest mb-2">{item.location}</div>
+                <div className="text-xs font-bold text-manara-cyan uppercase tracking-widest mb-2">{item.location}</div>
             )}
             {type === 'cuisine' && (
-                <div className="text-xs font-bold text-atlas-cyan uppercase tracking-widest mb-2">{item.category}</div>
+                <div className="text-xs font-bold text-manara-cyan uppercase tracking-widest mb-2">{item.category}</div>
             )}
 
             <h3 className="text-2xl font-bold text-white mb-2">{item.name}</h3>
@@ -314,7 +314,7 @@ const Modal = ({ item, onClose, type }) => (
                 <div className="h-64 md:h-full relative">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                     <div className="absolute top-4 left-4">
-                        <button onClick={onClose} className="p-2 bg-black/50 rounded-full text-white hover:bg-atlas-cyan/50 transition-colors">
+                        <button onClick={onClose} className="p-2 bg-black/50 rounded-full text-white hover:bg-manara-cyan/50 transition-colors">
                             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -323,7 +323,7 @@ const Modal = ({ item, onClose, type }) => (
                 </div>
 
                 <div className="p-8 md:p-12 flex flex-col justify-center max-h-[80vh] overflow-y-auto">
-                    <div className="text-atlas-cyan font-bold uppercase tracking-widest text-sm mb-2">
+                    <div className="text-manara-cyan font-bold uppercase tracking-widest text-sm mb-2">
                         {type === 'place' ? item.location : item.category}
                     </div>
                     <h2 className="text-4xl font-display font-bold text-white mb-6">{item.name}</h2>
@@ -334,7 +334,7 @@ const Modal = ({ item, onClose, type }) => (
                     {/* Cuisine: Best Places List */}
                     {type === 'cuisine' && item.bestPlaces && (
                         <div className="mb-8 p-6 bg-white/5 rounded-2xl border border-white/10">
-                            <h4 className="text-white font-bold text-sm uppercase mb-4 tracking-widest text-atlas-cyan">Best Places to Try</h4>
+                            <h4 className="text-white font-bold text-sm uppercase mb-4 tracking-widest text-manara-cyan">Best Places to Try</h4>
                             <ul className="space-y-4">
                                 {item.bestPlaces.map((place, index) => (
                                     <li key={index} className="flex flex-col">
@@ -376,7 +376,7 @@ const Modal = ({ item, onClose, type }) => (
                         )}
                     </div>
 
-                    <button className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-atlas-cyan transition-colors flex items-center justify-center gap-2">
+                    <button className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-manara-cyan transition-colors flex items-center justify-center gap-2">
                         {type === 'place' ? 'Add to Itinerary' : 'Save to Food List'}
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
                     </button>
@@ -409,13 +409,13 @@ const Essentials = () => {
                     <div className="flex gap-2 mt-8 md:mt-0 bg-white/5 p-1 rounded-full border border-white/10">
                         <button
                             onClick={() => setActiveTab('places')}
-                            className={`px-6 py-2 rounded-full text-sm font-bold uppercase transition-all ${activeTab === 'places' ? 'bg-atlas-cyan text-black shadow-[0_0_20px_rgba(0,234,255,0.2)]' : 'text-gray-400 hover:text-white'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-bold uppercase transition-all ${activeTab === 'places' ? 'bg-manara-cyan text-black shadow-[0_0_20px_rgba(0,234,255,0.2)]' : 'text-gray-400 hover:text-white'}`}
                         >
                             Places
                         </button>
                         <button
                             onClick={() => setActiveTab('cuisine')}
-                            className={`px-6 py-2 rounded-full text-sm font-bold uppercase transition-all ${activeTab === 'cuisine' ? 'bg-atlas-cyan text-black shadow-[0_0_20px_rgba(0,234,255,0.2)]' : 'text-gray-400 hover:text-white'}`}
+                            className={`px-6 py-2 rounded-full text-sm font-bold uppercase transition-all ${activeTab === 'cuisine' ? 'bg-manara-cyan text-black shadow-[0_0_20px_rgba(0,234,255,0.2)]' : 'text-gray-400 hover:text-white'}`}
                         >
                             Cuisine
                         </button>

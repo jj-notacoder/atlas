@@ -34,14 +34,14 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-lg text-gray-400 max-w-md mb-8 leading-relaxed"
                     >
-                        ATLAS quietly adapts tourism plans across the UAE—responding to heat, crowds, and events in real time.
+                        MANARA quietly adapts tourism plans across the UAE—responding to heat, crowds, and events in real time.
                     </motion.p>
 
                     <div className="flex flex-col sm:flex-row gap-6 mt-12">
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-4 bg-gradient-to-r from-atlas-cyan to-blue-600 text-black font-bold rounded-full shadow-[0_0_20px_rgba(0,234,255,0.4)] hover:shadow-[0_0_40px_rgba(0,234,255,0.6)] transition-all uppercase tracking-widest text-sm flex items-center justify-center gap-2"
+                            className="px-8 py-4 bg-gradient-to-r from-manara-cyan to-blue-600 text-black font-bold rounded-full shadow-[0_0_20px_rgba(0,234,255,0.4)] hover:shadow-[0_0_40px_rgba(0,234,255,0.6)] transition-all uppercase tracking-widest text-sm flex items-center justify-center gap-2"
                             onClick={() => document.getElementById('demo').scrollIntoView({ behavior: 'smooth' })}
                         >
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +60,7 @@ const Hero = () => {
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
-                            How Atlas Works
+                            How Manara Works
                         </motion.button>
                     </div>
                 </div>

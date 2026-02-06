@@ -39,7 +39,7 @@ const Vision = () => {
         <section id="vision" className="relative py-48 bg-surface overflow-hidden">
 
             {/* Ambient Background */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-atlas-cyan/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-manara-cyan/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
             <div className="container mx-auto px-6 relative z-10">
 
@@ -59,7 +59,7 @@ const Vision = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-2xl text-atlas-cyan font-medium tracking-[0.2em] uppercase"
+                        className="text-2xl text-manara-cyan font-medium tracking-[0.2em] uppercase"
                     >
                         Orchestrating the City
                     </motion.p>
@@ -74,18 +74,18 @@ const Vision = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.15, duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="group relative p-10 py-16 rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.03] to-transparent hover:border-atlas-cyan/40 hover:bg-white/[0.05] transition-all duration-500"
+                            className="group relative p-10 py-16 rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.03] to-transparent hover:border-manara-cyan/40 hover:bg-white/[0.05] transition-all duration-500"
                         >
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-atlas-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-manara-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                            <div className="mb-8 text-gray-500 group-hover:text-atlas-cyan transition-colors duration-300">
+                            <div className="mb-8 text-gray-500 group-hover:text-manara-cyan transition-colors duration-300">
                                 {feature.icon}
                             </div>
 
                             <h3 className="text-4xl font-bold text-white mb-2">{feature.title}</h3>
-                            <h4 className="text-xl text-atlas-cyan font-medium mb-8">{feature.sub}</h4>
+                            <h4 className="text-xl text-manara-cyan font-medium mb-8">{feature.sub}</h4>
 
-                            <p className="text-lg text-gray-400 font-medium border-l-2 border-white/10 pl-4 group-hover:border-atlas-cyan/50 transition-colors">
+                            <p className="text-lg text-gray-400 font-medium border-l-2 border-white/10 pl-4 group-hover:border-manara-cyan/50 transition-colors">
                                 {feature.description}
                             </p>
                         </motion.div>

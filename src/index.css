@@ -1,0 +1,81 @@
+@import '@fontsource/inter';
+@import '@fontsource/space-grotesk';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: #05070A;
+  color: #dbdbdb;
+}
+
+body {
+  @apply bg-background text-gray-300 font-sans antialiased overflow-x-hidden;
+  scroll-behavior: smooth;
+  background-image: linear-gradient(to bottom, #05070A, #050B12);
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display text-white tracking-tight;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-black/30 backdrop-blur-md border border-white/10 shadow-xl;
+}
+
+.glass-nav {
+  @apply bg-[#05070A]/80 backdrop-blur-lg border-b border-white/5;
+}
+
+/* Text Gradients */
+.text-gradient-cyan {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500;
+}
+
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-[#D4AF37];
+}
+
+/* Animation Utilities */
+.hover-glow-cyan {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow-cyan:hover {
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.4);
+}
+
+.hover-glow-gold {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow-gold:hover {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}

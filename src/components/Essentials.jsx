@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useProfile } from '../context/ProfileContext';
 
 // Import Local Images - Places
 import imgLouvre from '../assets/pictures/louvre.jpg';
@@ -376,7 +377,14 @@ const Modal = ({ item, onClose, type }) => (
                         )}
                     </div>
 
-                    <button className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-manara-cyan transition-colors flex items-center justify-center gap-2">
+                    <button
+                        onClick={() => {
+                            // Call context method
+                            window.addItemToContext(item, type);
+                            onClose();
+                        }}
+                        className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-manara-cyan transition-colors flex items-center justify-center gap-2"
+                    >
                         {type === 'place' ? 'Add to Itinerary' : 'Save to Food List'}
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
                     </button>
@@ -387,6 +395,14 @@ const Modal = ({ item, onClose, type }) => (
 );
 
 const Essentials = () => {
+    const { addItem } = useProfile();
+
+    // Quick hack to expose addItem to the Modal which is outside the main component scope in the current file structure
+    // Ideally Modal should take onAdd prop, but for minimal diffs:
+    React.useEffect(() => {
+        window.addItemToContext = addItem;
+    }, [addItem]);
+
     const [activeTab, setActiveTab] = useState('places');
     const [selectedItem, setSelectedItem] = useState(null);
 

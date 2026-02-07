@@ -1,0 +1,32 @@
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Database Connection
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/manara')
+    .then(() => console.log('✅ MongoDB Connected'))
+    .catch(err => console.error('❌ MongoDB Connection Error:', err));
+
+// Routes
+const authRoute = require('./routes/auth');
+const itineraryRoute = require('./routes/itinerary');
+
+app.use('/api/user', authRoute);
+app.use('/api/itineraries', itineraryRoute);
+
+app.get('/', (req, res) => {
+    res.send('MANARA API is running...');
+});
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+});

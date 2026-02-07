@@ -4,7 +4,7 @@ import UAEMapVisual from './UAEMapVisual';
 
 const Hero = () => {
     return (
-        <section className="relative w-full h-screen flex items-center bg-background overflow-hidden pt-20">
+        <section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden pt-20">
             <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                 {/* Left: Content */}
@@ -22,7 +22,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
+                        className="text-4xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
                     >
                         When the city changes,<br />
                         your plan changes.

@@ -3,30 +3,17 @@ import { useProfile } from '../../context/ProfileContext';
 
 const TRAVELERS = ['Family', 'Solo Explorer', 'Culture Seekers', 'Luxury / VIP'];
 const COSTS = ['Budget', 'Balanced', 'Premium'];
-const CUISINES = ['Emirati / Local', 'Asian', 'Mediterranean', 'Indian', 'International', 'Vegetarian / Vegan'];
 const CITIES = ['Abu Dhabi', 'Dubai', 'Sharjah', 'Ras Al Khaimah', 'Fujairah', 'Ajman', 'Umm Al Quwain'];
 
 const Preferences = () => {
     const { user, updatePreferences } = useProfile();
     const [formData, setFormData] = useState({
-        ...user,
-        foodChoices: user.foodChoices || []
+        ...user
     });
     const [showToast, setShowToast] = useState(false);
 
     const handleChange = (field, value) => {
         setFormData(prev => ({ ...prev, [field]: value }));
-    };
-
-    const toggleFood = (cuisine) => {
-        setFormData(prev => {
-            const current = prev.foodChoices || [];
-            if (current.includes(cuisine)) {
-                return { ...prev, foodChoices: current.filter(c => c !== cuisine) };
-            } else {
-                return { ...prev, foodChoices: [...current, cuisine] };
-            }
-        });
     };
 
     const handleSave = () => {
@@ -86,8 +73,8 @@ const Preferences = () => {
                                         key={type}
                                         onClick={() => handleChange('travelerType', type)}
                                         className={`px-4 py-2 rounded-lg text-sm font-bold border transition-all ${formData.travelerType === type
-                                                ? 'bg-manara-cyan/20 border-manara-cyan text-manara-cyan'
-                                                : 'bg-white/5 border-white/5 text-gray-400 hover:bg-white/10'
+                                            ? 'bg-manara-cyan/20 border-manara-cyan text-manara-cyan'
+                                            : 'bg-white/5 border-white/5 text-gray-400 hover:bg-white/10'
                                             }`}
                                     >
                                         {type}
@@ -104,8 +91,8 @@ const Preferences = () => {
                                         key={cost}
                                         onClick={() => handleChange('costPreference', cost)}
                                         className={`flex-1 py-2 rounded-lg text-sm font-bold transition-all ${formData.costPreference === cost
-                                                ? 'bg-white/10 text-white shadow-sm'
-                                                : 'text-gray-500 hover:text-gray-300'
+                                            ? 'bg-white/10 text-white shadow-sm'
+                                            : 'text-gray-500 hover:text-gray-300'
                                             }`}
                                     >
                                         {cost}
@@ -116,35 +103,7 @@ const Preferences = () => {
                     </div>
                 </div>
 
-                {/* Food Choices */}
-                <div className="bg-surface border border-white/10 rounded-2xl p-6">
-                    <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <span className="w-1 h-6 bg-green-500 rounded-full"></span>
-                        Food & Dining
-                    </h3>
-                    <div>
-                        <label className="text-xs uppercase font-bold text-gray-500 mb-3 block">Favorite Cuisines</label>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                            {CUISINES.map(cuisine => (
-                                <button
-                                    key={cuisine}
-                                    onClick={() => toggleFood(cuisine)}
-                                    className={`px-4 py-3 rounded-xl text-sm font-medium border text-left flex items-center justify-between transition-all ${formData.foodChoices?.includes(cuisine)
-                                            ? 'bg-green-500/10 border-green-500/50 text-green-400'
-                                            : 'bg-white/5 border-white/5 text-gray-400 hover:bg-white/10'
-                                        }`}
-                                >
-                                    {cuisine}
-                                    {formData.foodChoices?.includes(cuisine) && (
-                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    )}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+
 
                 {/* Save Button */}
                 <div className="flex justify-end pt-4 sticky bottom-6 z-10">

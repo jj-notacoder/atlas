@@ -67,11 +67,20 @@ const Profile = () => {
                                 )}
                             </button>
                             <button
-                                onClick={() => setActiveTab('saved')}
-                                className={`px-8 py-4 font-bold uppercase tracking-widest text-sm relative transition-colors whitespace-nowrap ${activeTab === 'saved' ? 'text-manara-cyan' : 'text-gray-500 hover:text-white'}`}
+                                onClick={() => setActiveTab('places')}
+                                className={`px-8 py-4 font-bold uppercase tracking-widest text-sm relative transition-colors whitespace-nowrap ${activeTab === 'places' ? 'text-manara-cyan' : 'text-gray-500 hover:text-white'}`}
                             >
                                 Saved Places
-                                {activeTab === 'saved' && (
+                                {activeTab === 'places' && (
+                                    <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-manara-cyan" />
+                                )}
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('cuisines')}
+                                className={`px-8 py-4 font-bold uppercase tracking-widest text-sm relative transition-colors whitespace-nowrap ${activeTab === 'cuisines' ? 'text-manara-cyan' : 'text-gray-500 hover:text-white'}`}
+                            >
+                                Saved Cuisines
+                                {activeTab === 'cuisines' && (
                                     <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-1 bg-manara-cyan" />
                                 )}
                             </button>
@@ -120,23 +129,23 @@ const Profile = () => {
                                 </div>
                             )}
 
-                            {activeTab === 'saved' && (
+                            {activeTab === 'places' && (
                                 <div className="space-y-6">
-                                    {(!addedItems || addedItems.length === 0) ? (
+                                    {(!addedItems || addedItems.filter(i => i.type === 'place').length === 0) ? (
                                         <div className="text-center py-20 bg-white/5 rounded-2xl border border-dashed border-white/10">
-                                            <h3 className="text-xl font-bold text-white mb-2">No saved items yet</h3>
-                                            <p className="text-gray-500 mb-6">Explore Essentials to save places and cuisine.</p>
+                                            <h3 className="text-xl font-bold text-white mb-2">No saved places yet</h3>
+                                            <p className="text-gray-500 mb-6">Explore Essentials to save places.</p>
                                             <a href="/#essentials" className="text-manara-cyan font-bold hover:underline">Explore Essentials</a>
                                         </div>
                                     ) : (
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                            {addedItems.map((item, index) => (
+                                            {addedItems.filter(i => i.type === 'place').map((item, index) => (
                                                 <div key={`${item.id}-${index}`} className="bg-surface border border-white/10 rounded-2xl overflow-hidden group">
                                                     <div className="h-48 relative overflow-hidden">
-                                                        <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                                        <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                                         <div className="absolute top-4 right-4">
                                                             <span className="px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold text-white uppercase tracking-wider">
-                                                                {item.type === 'place' ? 'Place' : 'Cuisine'}
+                                                                {item.location}
                                                             </span>
                                                         </div>
                                                     </div>
@@ -152,7 +161,50 @@ const Profile = () => {
                                                         </div>
                                                         <p className="text-sm text-gray-400 mb-4 line-clamp-2">{item.description}</p>
                                                         <div className="flex gap-2">
-                                                            <span className="px-2 py-1 bg-white/5 rounded text-xs text-gray-400">{item.bestTime || item.window}</span>
+                                                            <span className="px-2 py-1 bg-white/5 rounded text-xs text-gray-400">{item.bestTime}</span>
+                                                            <span className="px-2 py-1 bg-white/5 rounded text-xs text-gray-400">{item.cost}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {activeTab === 'cuisines' && (
+                                <div className="space-y-6">
+                                    {(!addedItems || addedItems.filter(i => i.type === 'cuisine').length === 0) ? (
+                                        <div className="text-center py-20 bg-white/5 rounded-2xl border border-dashed border-white/10">
+                                            <h3 className="text-xl font-bold text-white mb-2">No saved cuisines yet</h3>
+                                            <p className="text-gray-500 mb-6">Explore Essentials to save dishes.</p>
+                                            <a href="/#essentials" className="text-manara-cyan font-bold hover:underline">Explore Essentials</a>
+                                        </div>
+                                    ) : (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                            {addedItems.filter(i => i.type === 'cuisine').map((item, index) => (
+                                                <div key={`${item.id}-${index}`} className="bg-surface border border-white/10 rounded-2xl overflow-hidden group">
+                                                    <div className="h-48 relative overflow-hidden">
+                                                        <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                                        <div className="absolute top-4 right-4">
+                                                            <span className="px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-bold text-white uppercase tracking-wider">
+                                                                {item.category}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-6">
+                                                        <div className="flex justify-between items-start mb-2">
+                                                            <h3 className="text-lg font-bold text-white">{item.name}</h3>
+                                                            <button
+                                                                onClick={() => removeItem(item.id)}
+                                                                className="text-gray-500 hover:text-red-400 transition-colors"
+                                                            >
+                                                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                                            </button>
+                                                        </div>
+                                                        <p className="text-sm text-gray-400 mb-4 line-clamp-2">{item.description}</p>
+                                                        <div className="flex gap-2">
+                                                            <span className="px-2 py-1 bg-white/5 rounded text-xs text-gray-400">{item.window}</span>
                                                             <span className="px-2 py-1 bg-white/5 rounded text-xs text-gray-400">{item.cost}</span>
                                                         </div>
                                                     </div>

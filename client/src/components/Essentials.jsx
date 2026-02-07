@@ -298,7 +298,9 @@ const Card = ({ item, onClick, type }) => (
     </motion.div>
 );
 
-const Modal = ({ item, onClose, type }) => (
+import { useNavigate } from 'react-router-dom';
+
+const Modal = ({ item, onClose, onAdd, type }) => (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
         <motion.div
             initial={{ opacity: 0 }}
@@ -379,8 +381,7 @@ const Modal = ({ item, onClose, type }) => (
 
                     <button
                         onClick={() => {
-                            // Call context method
-                            window.addItemToContext(item, type);
+                            onAdd(item, type);
                             onClose();
                         }}
                         className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest rounded-xl hover:bg-manara-cyan transition-colors flex items-center justify-center gap-2"
@@ -395,16 +396,22 @@ const Modal = ({ item, onClose, type }) => (
 );
 
 const Essentials = () => {
-    const { addItem } = useProfile();
-
-    // Quick hack to expose addItem to the Modal which is outside the main component scope in the current file structure
-    // Ideally Modal should take onAdd prop, but for minimal diffs:
-    React.useEffect(() => {
-        window.addItemToContext = addItem;
-    }, [addItem]);
+    const { addItem, user } = useProfile();
+    const navigate = useNavigate();
+    const [showToast, setShowToast] = useState(false);
 
     const [activeTab, setActiveTab] = useState('places');
     const [selectedItem, setSelectedItem] = useState(null);
+
+    const handleAddItem = (item, type) => {
+        if (!user) {
+            navigate('/profile');
+            return;
+        }
+        addItem(item, type);
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000);
+    };
 
     return (
         <section id="essentials" className="py-32 bg-background relative overflow-hidden">
@@ -465,9 +472,22 @@ const Essentials = () => {
                         item={selectedItem}
                         type={activeTab === 'places' ? 'place' : 'cuisine'}
                         onClose={() => setSelectedItem(null)}
+                        onAdd={handleAddItem}
                     />
                 )}
             </AnimatePresence>
+
+            {/* Toast */}
+            {showToast && (
+                <div className="fixed bottom-8 right-8 bg-surface border border-manara-cyan text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-slide-up z-50">
+                    <div className="w-6 h-6 rounded-full bg-manara-cyan flex items-center justify-center">
+                        <svg className="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <span className="font-medium">Added to itinerary</span>
+                </div>
+            )}
 
         </section>
     );

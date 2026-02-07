@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useProfile } from '../context/ProfileContext';
 import { Link } from 'react-router-dom';
 
+import logo from '../assets/pictures/logo.jpeg';
+
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const { user, logout } = useProfile();
@@ -43,9 +45,14 @@ const Navbar = () => {
             <div className="container mx-auto px-6">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2 cursor-pointer group">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-manara-cyan to-blue-600 group-hover:shadow-[0_0_20px_rgba(0,234,255,0.5)] transition-shadow duration-300"></div>
-                        <span className="text-2xl font-display font-bold tracking-tighter text-white">MANARA</span>
+                    <Link to="/" className="flex items-center gap-3 cursor-pointer group">
+                        <img src={logo} alt="MANARA Logo" className="w-12 h-12 rounded-full object-cover border-2 border-manara-cyan/50 group-hover:border-manara-cyan transition-colors" />
+                        <div className="flex flex-col">
+                            <span className="text-2xl font-display font-bold tracking-tighter text-white leading-none">MANARA</span>
+                            <span className="text-[8px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-manara-cyan transition-colors">
+                                Multi-Agent Adaptive Navigation &<br />Accessible Route Assistant
+                            </span>
+                        </div>
                     </Link>
 
                     {/* Desktop Links */}

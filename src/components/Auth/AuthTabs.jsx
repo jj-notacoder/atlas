@@ -104,7 +104,7 @@ const AuthTabs = () => {
 
                 {error && (
                     <div className="bg-red-500/10 border border-red-500/20 text-red-500 text-sm p-4 rounded-xl">
-                        {typeof error === 'string' ? error : 'Authentication failed. Please check your details.'}
+                        {typeof error === 'string' ? error : JSON.stringify(error, null, 2)}
                     </div>
                 )}
 

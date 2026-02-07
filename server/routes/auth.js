@@ -31,7 +31,8 @@ router.post('/register', async (req, res) => {
         res.header('auth-token', token).send({ token, user: { name: savedUser.name, email: savedUser.email, startingCity: savedUser.startingCity } });
 
     } catch (err) {
-        res.status(400).send(err);
+        console.error('Register Error:', err);
+        res.status(400).send({ message: err.message, error: err });
     }
 });
 

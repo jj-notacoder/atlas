@@ -11,7 +11,7 @@ async function testRegister() {
 
     console.log('Attempting to register:', userData);
     try {
-        const res = await axios.post('http://localhost:5000/api/user/register', userData);
+        const res = await axios.post('https://manara.onrender.com/api/user/register', userData);
         console.log('✅ Registration Successful:', res.data);
     } catch (err) {
         if (err.response) {

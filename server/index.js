@@ -11,7 +11,12 @@ app.use(cors());
 app.use(express.json());
 
 // Database Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/manara')
+// Database Connection
+const dbUri = process.env.MONGODB_URI;
+console.log('Attempting DB Connection. URI detected:', dbUri ? 'YES' : 'NO');
+if (!dbUri) console.warn('WARNING: MONGODB_URI is missing! Defaulting to localhost (will fail on Render).');
+
+mongoose.connect(dbUri || 'mongodb://127.0.0.1:27017/manara')
     .then(() => console.log('✅ MongoDB Connected'))
     .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
@@ -23,7 +28,9 @@ app.use('/api/user', authRoute);
 app.use('/api/itineraries', itineraryRoute);
 
 app.get('/', (req, res) => {
-    res.send('MANARA API is running...');
+    const states = { 0: 'Disconnected', 1: 'Connected', 2: 'Connecting', 3: 'Disconnecting' };
+    const status = states[mongoose.connection.readyState] || 'Unknown';
+    res.send(`MANARA API is running... <br>DB Status: <b>${status}</b>`);
 });
 
 // Start Server
